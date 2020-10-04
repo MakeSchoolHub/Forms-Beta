@@ -13,8 +13,8 @@ function App() {
       <header>
       <h1>BONDfyr Gaming Tags</h1>
       </header>
-      <Form setInputText={setInputText} />
-      <TodoList />
+      <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} />
+      <TodoList todos={todos} />
     </div>
   );
 }
