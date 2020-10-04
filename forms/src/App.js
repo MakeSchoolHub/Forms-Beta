@@ -11,9 +11,14 @@ function App() {
   const [status, setStatus] = useState('all')
   const [filteredTodos, setFilteredTodos] = useState([])
 
+  useEffect(() => {
+    getLocalTodos()
+  }, [])
+
   //effect
   useEffect(() => {
     filterHandler()
+    saveLocalTodos()
   }, [todos, status])
 
   //functions
@@ -32,6 +37,17 @@ function App() {
   }
 
   //save to local, just an easy way without using databases
+  const saveLocalTodos = () => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }
+  const getLocalTodos = () => {
+    if(localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]))
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem("todos"))
+      setTodos(todoLocal)
+    }
+  }
 
   return (
     <div className="App">
