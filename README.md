@@ -1,5 +1,5 @@
 # Forms-Beta
-The BONDfyr form-adding game feature in its beta mode.
+## The BONDfyr form-adding game feature in its beta mode.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
